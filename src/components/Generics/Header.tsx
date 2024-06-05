@@ -33,12 +33,24 @@ export default function Header() {
         <ul
           className={`flex flex-col gap-10 text-lg ${state ? 'block' : 'hidden'}`}
         >
-          <Link to="/">home</Link>
-          <Link to="/shoes">shoes</Link>
-          <Link to="/sweaters">sweaters</Link>
-          <Link to="/jackets">jackets</Link>
-          <Link to="/pants">pants</Link>
-          <Link to="/about">about</Link>
+          <Link to="/" onClick={() => setState(!state)}>
+            home
+          </Link>
+          <Link to="/shoes" onClick={() => setState(!state)}>
+            shoes
+          </Link>
+          <Link to="/sweaters" onClick={() => setState(!state)}>
+            sweaters
+          </Link>
+          <Link to="/jackets" onClick={() => setState(!state)}>
+            jackets
+          </Link>
+          <Link to="/pants" onClick={() => setState(!state)}>
+            pants
+          </Link>
+          <Link to="/about" onClick={() => setState(!state)}>
+            about
+          </Link>
         </ul>
       </header>
     </>
