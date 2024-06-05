@@ -6,7 +6,7 @@ export default function BaseLayout() {
   return (
     <>
       <Header />
-      <main className="mt-14 sm:mt-16">
+      <main className="mt-14">
         <App />
       </main>
       <Footer />

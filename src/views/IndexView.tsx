@@ -1,6 +1,6 @@
 import BaseIndex from '../components/IndexComponents/BaseIndex'
 
-export default function Index() {
+export default function IndexView() {
   return (
     <>
       <BaseIndex />

@@ -9,7 +9,7 @@ import PantsView from './views/PantsView'
 export default function App() {
   return (
     <Routes>
-      <Route index path="/" element={<IndexView />} />
+      <Route path="/" element={<IndexView />} />
       <Route path="/about" element={<AboutView />} />
       <Route path="/shoes" element={<ShoesView />} />
       <Route path="/sweaters" element={<SweatersView />} />
