@@ -1,10 +1,9 @@
-import { Link } from 'react-router-dom'
+import BaseIndex from '../components/IndexComponents/BaseIndex'
 
 export default function Index() {
   return (
     <>
-      <Link to="/about">about</Link>
-      <div>Index</div>
+      <BaseIndex />
     </>
   )
 }

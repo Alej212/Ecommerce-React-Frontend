@@ -1,16 +1,20 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom/dist'
-import Index from './views/IndexView'
-import About from './views/AboutView'
+import { Routes, Route } from 'react-router-dom'
+import IndexView from './views/IndexView'
+import AboutView from './views/AboutView'
+import ShoesView from './views/ShoesView'
+import SweatersView from './views/SweatersView'
+import JacketsView from './views/JacketsView'
+import PantsView from './views/PantsView'
 
-function App() {
+export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route index path="/" Component={Index} />
-        <Route path="/about" Component={About} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route index path="/" element={<IndexView />} />
+      <Route path="/about" element={<AboutView />} />
+      <Route path="/shoes" element={<ShoesView />} />
+      <Route path="/sweaters" element={<SweatersView />} />
+      <Route path="/jackets" element={<JacketsView />} />
+      <Route path="/pants" element={<PantsView />} />
+    </Routes>
   )
 }
-
-export default App
