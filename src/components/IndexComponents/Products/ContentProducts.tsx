@@ -19,7 +19,7 @@ export default function ContentProducts() {
   const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   return (
     <Swiper
-      className="h-60 sm:h-64"
+      className="h-64 sm:h-72"
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
       spaceBetween={0}
@@ -44,7 +44,7 @@ export default function ContentProducts() {
         },
         // when window width is >= 1024px
         1024: {
-          slidesPerView: 7,
+          slidesPerView: 6,
           // spaceBetween: 40,
         },
       }}
