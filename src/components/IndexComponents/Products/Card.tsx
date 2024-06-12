@@ -1,16 +1,25 @@
 import { Icon } from '@iconify/react'
 import { useState } from 'react'
-import shoesJSON from '../../../JSON/shoes.json'
+// import shoesJSON from '../../../JSON/shoes.json'
 
-export default function Card() {
+type Product = {
+  custom_id: string
+  image: string
+  title: string
+  price: string
+  genre: string
+  type_product: string
+}
+
+export default function Card({ product }: { product: Product }) {
   const [hidden, setHidden] = useState(false)
-  const shoes = shoesJSON[0]
+  // const shoes = shoesJSON[0]
 
   return (
     <div className="h-full w-full py-4 px-2">
       <div className="relative flex flex-col gap-2 h-full w-full bg-gray-50 rounded-md p-2 border border-gray-950 border-opacity-10 shadow-md">
         <div className="h-1/2 w-full flex justify-center">
-          <img src={shoes.image} alt="" className="h-full" />
+          <img src={product.image} alt="" className="h-full" />
         </div>
         <button
           onClick={() => setHidden(!hidden)}
@@ -28,11 +37,11 @@ export default function Card() {
           ></Icon>
         </button>
         <div className="h-8 overflow-x-hidden overflow-y-hidden">
-          <p className="text-xs font-semibold">{shoes.title}</p>
+          <p className="text-xs font-semibold">{product.title}</p>
         </div>
         <button className="">
           <p className="relative font-medium text-base sm:text-lg">
-            {shoes.price}
+            {product.price}
             <span className="absolute font-bold text-xs sm:text-sm -top-0 text-gray-800">
               $
             </span>

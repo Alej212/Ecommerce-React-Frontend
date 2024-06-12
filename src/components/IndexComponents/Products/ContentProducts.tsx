@@ -15,8 +15,35 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 
-export default function ContentProducts() {
-  const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// JSON
+import shoesData from '../../../JSON/shoes.json'
+import sweatersData from '../../../JSON/sweaters.json'
+import jacketsData from '../../../JSON/jackets.json'
+
+type Product = {
+  custom_id: string
+  image: string
+  title: string
+  price: string
+  genre: string
+  type_product: string
+}
+
+export default function ContentProducts({ type }: { type: string }) {
+  let data: Product[]
+  switch (type) {
+    case 'shoes':
+      data = shoesData.slice(0, 10)
+      break
+    case 'sweaters':
+      data = sweatersData.slice(0, 10)
+      break
+    case 'jackets':
+      data = jacketsData.slice(0, 10)
+      break
+    default:
+      data = []
+  }
   return (
     <Swiper
       className="h-64 sm:h-72"
@@ -49,9 +76,9 @@ export default function ContentProducts() {
         },
       }}
     >
-      {data.map((_item, index) => (
+      {data.map((product, index) => (
         <SwiperSlide key={index} className="bg-none">
-          <Card />
+          <Card product={product} />
         </SwiperSlide>
       ))}
     </Swiper>
