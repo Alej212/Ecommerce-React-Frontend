@@ -16,9 +16,10 @@ import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 
 export default function ContentProducts() {
+  const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   return (
     <Swiper
-      className="h-56"
+      className="h-60 sm:h-64"
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
       spaceBetween={0}
@@ -28,19 +29,31 @@ export default function ContentProducts() {
       // scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
+      breakpoints={{
+        500: {
+          slidesPerView: 4,
+        },
+        640: {
+          slidesPerView: 4,
+          // spaceBetween: 20,
+        },
+        // when window width is >= 768px
+        768: {
+          slidesPerView: 5,
+          // spaceBetween: 30,
+        },
+        // when window width is >= 1024px
+        1024: {
+          slidesPerView: 7,
+          // spaceBetween: 40,
+        },
+      }}
     >
-      <SwiperSlide className="bg-none">
-        <Card />
-      </SwiperSlide>
-      <SwiperSlide className="bg-none">
-        <Card />
-      </SwiperSlide>
-      <SwiperSlide className="bg-none">
-        <Card />
-      </SwiperSlide>
-      <SwiperSlide className="bg-none">
-        <Card />
-      </SwiperSlide>
+      {data.map((item, index) => (
+        <SwiperSlide key={index} className="bg-none">
+          <Card />
+        </SwiperSlide>
+      ))}
     </Swiper>
   )
 }

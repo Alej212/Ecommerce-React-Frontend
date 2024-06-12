@@ -8,13 +8,25 @@ export default function Header() {
   return (
     <>
       <header className="hidden bg-gray-900 h-16 w-full absolute top-0 z-20 sm:flex items-center justify-center">
-        <ul className="flex gap-10 text-sm font-normal">
-          <Link to="/">home</Link>
-          <Link to="/shoes">shoes</Link>
-          <Link to="/sweaters">sweaters</Link>
-          <Link to="/jackets">jackets</Link>
-          <Link to="/pants">pants</Link>
-          <Link to="/about">about</Link>
+        <ul className="flex gap-10 text-sm font-semibold">
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/shoes">Shoes</Link>
+          </li>
+          <li>
+            <Link to="/sweaters">Sweaters</Link>
+          </li>
+          <li>
+            <Link to="/jackets">Jackets</Link>
+          </li>
+          <li>
+            <Link to="/pants">Pants</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
         </ul>
       </header>
       <button
@@ -34,22 +46,22 @@ export default function Header() {
           className={`flex flex-col gap-10 text-lg ${state ? 'block' : 'hidden'}`}
         >
           <Link to="/" onClick={() => setState(!state)}>
-            home
+            Home
           </Link>
           <Link to="/shoes" onClick={() => setState(!state)}>
-            shoes
+            Shoes
           </Link>
           <Link to="/sweaters" onClick={() => setState(!state)}>
-            sweaters
+            Sweaters
           </Link>
           <Link to="/jackets" onClick={() => setState(!state)}>
-            jackets
+            Jackets
           </Link>
           <Link to="/pants" onClick={() => setState(!state)}>
-            pants
+            Pants
           </Link>
           <Link to="/about" onClick={() => setState(!state)}>
-            about
+            About
           </Link>
         </ul>
       </header>

@@ -1,5 +1,5 @@
 // import BaseCarousel from './Carousel/BaseCarousel'
-import ContentProducts from './ContentProducts'
+import ContentProducts from './Products/ContentProducts'
 
 export default function BaseIndex() {
   return (
