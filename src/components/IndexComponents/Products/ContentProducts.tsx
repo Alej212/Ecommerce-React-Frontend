@@ -49,7 +49,7 @@ export default function ContentProducts() {
         },
       }}
     >
-      {data.map((item, index) => (
+      {data.map((_item, index) => (
         <SwiperSlide key={index} className="bg-none">
           <Card />
         </SwiperSlide>
