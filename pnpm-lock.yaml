@@ -32,6 +32,9 @@ importers:
       three:
         specifier: ^0.165.0
         version: 0.165.0
+      three-stdlib:
+        specifier: ^2.30.3
+        version: 2.30.3(three@0.165.0)
     devDependencies:
       '@iconify/react':
         specifier: ^5.0.1
