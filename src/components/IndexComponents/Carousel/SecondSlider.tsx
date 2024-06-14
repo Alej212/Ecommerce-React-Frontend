@@ -1,5 +1,5 @@
 import { Canvas, useLoader, useFrame } from '@react-three/fiber'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 // import { Text } from '@react-three/drei'
 import { Suspense, useRef } from 'react'
 import * as THREE from 'three'
