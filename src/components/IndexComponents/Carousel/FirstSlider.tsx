@@ -28,10 +28,10 @@ function SceneGLTF() {
 export default function FirstSlider() {
   return (
     <>
-      <h3 className="absolute top-1/3 right-5 sm:right-1/4 md:right-1/3 font-bold text-2xl text-end">
+      <h3 className="absolute top-1/3 right-5 sm:right-1/4 md:right-1/3 font-extrabold text-xl text-end uppercase">
         Vans Old School
         <br />
-        <span className="text-blue-500">Blue</span>
+        <span className="text-blue-700 font-extrabold uppercase">Blue</span>
       </h3>
       <Canvas>
         <Suspense fallback={null}>

@@ -29,7 +29,7 @@ export default function ThirdSlider() {
   return (
     <>
       <div className="absolute inset-0 flex items-center justify-center z-10">
-        <h3 className="font-bold text-3xl sm:text-4xl uppercase text-slate-50">
+        <h3 className="font-extrabold text-3xl sm:text-4xl uppercase text-slate-100 text-opacity-90">
           Oversized sweater
         </h3>
       </div>

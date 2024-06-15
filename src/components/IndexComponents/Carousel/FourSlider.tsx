@@ -30,10 +30,10 @@ function SceneGLTF() {
 export default function FourSlider() {
   return (
     <>
-      <h3 className="absolute top-1/3 right-5 sm:right-1/4 md:right-1/3 font-bold text-2xl text-end">
+      <h3 className="absolute top-1/3 right-5 sm:right-1/4 md:right-1/3 font-extrabold text-xl text-end uppercase">
         New Nike Shoes
         <br />
-        <span className="text-red-500">Colorful</span>
+        <span className="text-red-600">Colorful</span>
       </h3>
       <Canvas>
         <Suspense fallback={null}>
