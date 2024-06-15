@@ -29,7 +29,7 @@ function SceneGLTF() {
 
 export default function FourSlider() {
   return (
-    <>
+    <div className="relative">
       <h3 className="absolute top-1/3 right-5 sm:right-1/4 md:right-1/3 font-extrabold text-xl text-end uppercase">
         New Nike Shoes
         <br />
@@ -42,6 +42,6 @@ export default function FourSlider() {
           <pointLight position={[0, 0, 0]} />
         </Suspense>
       </Canvas>
-    </>
+    </div>
   )
 }

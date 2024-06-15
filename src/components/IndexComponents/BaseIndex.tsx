@@ -1,10 +1,10 @@
 import ContentProducts from './Products/ContentProducts'
-import BaseCarousel from './Carousel/BaseCarousel'
+import FourSlider from './Carousel/FourSlider'
 
 export default function BaseIndex() {
   return (
     <>
-      <BaseCarousel />
+      <FourSlider />
       <div className="py-3">
         <div>
           <h2 className="text-2xl font-bold pl-2">Shoes</h2>
