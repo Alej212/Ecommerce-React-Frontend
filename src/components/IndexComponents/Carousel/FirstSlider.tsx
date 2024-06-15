@@ -27,7 +27,7 @@ function SceneGLTF() {
 
 export default function FirstSlider() {
   return (
-    <>
+    <div className="relative h-48">
       <h3 className="absolute top-1/3 right-5 sm:right-1/4 md:right-1/3 font-extrabold text-xl text-end uppercase">
         Vans Old School
         <br />
@@ -51,6 +51,6 @@ export default function FirstSlider() {
           />
         </Suspense>
       </Canvas>
-    </>
+    </div>
   )
 }

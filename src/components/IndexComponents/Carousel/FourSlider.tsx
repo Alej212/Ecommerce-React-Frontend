@@ -29,7 +29,7 @@ function SceneGLTF() {
 
 export default function FourSlider() {
   return (
-    <div className="relative">
+    <div className="relative h-48">
       <h3 className="absolute top-1/3 right-5 sm:right-1/4 md:right-1/3 font-extrabold text-xl text-end uppercase">
         New Nike Shoes
         <br />
