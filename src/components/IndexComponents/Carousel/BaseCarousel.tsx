@@ -17,7 +17,6 @@ import 'swiper/css/scrollbar'
 
 // 3D three fiber
 import FirstSlider from './FirstSlider'
-import SecondSlider from './SecondSlider'
 import ThirdSlider from './ThirdSlider'
 import FourSlider from './FourSlider'
 
@@ -42,9 +41,6 @@ export default function BaseCarousel() {
       >
         <SwiperSlide className="bg-blue-200">
           <FirstSlider />
-        </SwiperSlide>
-        <SwiperSlide className="bg-emerald-100">
-          <SecondSlider />
         </SwiperSlide>
         <SwiperSlide className="bg-gray-400">
           <ThirdSlider />
