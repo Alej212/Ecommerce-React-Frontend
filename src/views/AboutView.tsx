@@ -1,4 +1,4 @@
-import Base from '../components/AboutComponents/base'
+import Base from '../components/AboutViewComponents/base'
 
 export default function About() {
   return (

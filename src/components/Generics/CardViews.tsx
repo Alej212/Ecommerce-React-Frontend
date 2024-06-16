@@ -44,11 +44,11 @@ export default function CardViews() {
   const products = productsMap[path[0]] || []
   return (
     <div className="h-full w-full flex justify-center py-6 px-3">
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3">
         {products.map((product: Product) => (
           <div
             key={product.custom_id}
-            className="relative flex flex-col gap-2 h-56 bg-gray-50 rounded-md p-2 border border-gray-950 border-opacity-10 shadow-md"
+            className="relative flex flex-col gap-2 h-56 sm:h-64 bg-gray-50 rounded-md p-2 border border-gray-950 border-opacity-10 shadow-md"
           >
             <div className="h-1/2 w-full flex justify-center">
               <img src={product.image} alt="" className="h-full" />
