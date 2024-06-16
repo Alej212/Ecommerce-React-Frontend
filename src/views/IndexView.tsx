@@ -1,4 +1,4 @@
-import BaseIndex from '../components/IndexComponents/BaseIndex'
+import BaseIndex from '../components/IndexViewComponents/BaseIndex'
 
 export default function IndexView() {
   return (

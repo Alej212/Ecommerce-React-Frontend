@@ -1,6 +1,5 @@
 import { Icon } from '@iconify/react'
 import { useState } from 'react'
-// import shoesJSON from '../../../JSON/shoes.json'
 
 type Product = {
   custom_id: string
@@ -13,7 +12,6 @@ type Product = {
 
 export default function Card({ product }: { product: Product }) {
   const [hidden, setHidden] = useState(false)
-  // const shoes = shoesJSON[0]
 
   return (
     <div className="h-full w-full py-4 px-2">

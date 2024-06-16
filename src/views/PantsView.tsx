@@ -1,3 +1,9 @@
+import BasePants from '../components/PantsViewComponents/BasePants'
+
 export default function PantsView() {
-  return <div>PantsView</div>
+  return (
+    <>
+      <BasePants />
+    </>
+  )
 }
