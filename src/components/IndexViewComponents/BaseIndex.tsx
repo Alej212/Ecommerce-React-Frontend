@@ -3,7 +3,7 @@ import FourSlider from './Carousel/FourSlider'
 
 export default function BaseIndex() {
   return (
-    <>
+    <div>
       <FourSlider />
       <div className="py-3">
         <div>
@@ -19,6 +19,6 @@ export default function BaseIndex() {
           <ContentProducts type="jackets" />
         </div>
       </div>
-    </>
+    </div>
   )
 }

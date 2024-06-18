@@ -1,10 +1,9 @@
-import Base from '../components/AboutViewComponents/base'
+import BaseAbout from '../components/AboutViewComponents/BaseAbout'
 
 export default function About() {
   return (
     <>
-      <Base />
-      <div>About</div>
+      <BaseAbout />
     </>
   )
 }

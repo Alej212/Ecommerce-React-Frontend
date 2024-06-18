@@ -19,6 +19,7 @@ import 'swiper/css/scrollbar'
 import shoesData from '../../../JSON/shoes.json'
 import sweatersData from '../../../JSON/sweaters.json'
 import jacketsData from '../../../JSON/jackets.json'
+import pantsData from '../../../JSON/pants.json'
 
 type Product = {
   custom_id: string
@@ -40,6 +41,9 @@ export default function ContentProducts({ type }: { type: string }) {
       break
     case 'jackets':
       data = jacketsData.slice(0, 10)
+      break
+    case 'pants':
+      data = pantsData.slice(0, 10)
       break
     default:
       data = []

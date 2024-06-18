@@ -5,6 +5,7 @@ import ShoesView from './views/ShoesView'
 import SweatersView from './views/SweatersView'
 import JacketsView from './views/JacketsView'
 import PantsView from './views/PantsView'
+import ProductIdView from './views/ProductIdView'
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
       <Route path="/sweaters" element={<SweatersView />} />
       <Route path="/jackets" element={<JacketsView />} />
       <Route path="/pants" element={<PantsView />} />
+      <Route path="/product/:id" element={<ProductIdView />} />
     </Routes>
   )
 }
