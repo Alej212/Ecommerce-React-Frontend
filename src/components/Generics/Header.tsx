@@ -7,8 +7,22 @@ export default function Header() {
 
   return (
     <>
-      <header className="hidden bg-gray-900 h-16 w-full absolute top-0 z-20 sm:flex items-center justify-center">
-        <ul className="flex gap-10 text-sm font-bold">
+      <header className="hidden bg-gray-900 h-16 w-full absolute top-0 z-20 sm:flex items-center justify-around">
+        <ul>
+          <li>
+            <Link
+              to="/about"
+              className="flex gap-1 items-center font-medium uppercase"
+            >
+              me
+              <Icon
+                icon="line-md:buy-me-a-coffee-filled"
+                className="h-7 w-7"
+              ></Icon>
+            </Link>
+          </li>
+        </ul>
+        <ul className="flex gap-11 text-sm font-bold">
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -24,8 +38,18 @@ export default function Header() {
           <li>
             <Link to="/pants">Pants</Link>
           </li>
+        </ul>
+        <ul className="flex gap-3">
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/cart">
+              <Icon
+                icon="material-symbols:shopping-cart"
+                className="h-7 w-7"
+              ></Icon>
+            </Link>
+          </li>
+          <li>
+            <Icon icon="mdi:world" className="text-white h-7 w-7"></Icon>
           </li>
         </ul>
       </header>
@@ -34,8 +58,8 @@ export default function Header() {
         className="sm:hidden fixed top-3 left-3 z-30 bg-none"
       >
         <Icon
-          icon="raphael:arrowright"
-          fontSize="1.7rem"
+          icon="ep:menu"
+          fontSize="1.9rem"
           className={`${state ? 'transform rotate-90 text-emerald-500' : 'transform rotate- text-gray-200'} transition-transform duration-500`}
         ></Icon>
       </button>
@@ -60,11 +84,33 @@ export default function Header() {
           <Link to="/pants" onClick={() => setState(!state)}>
             Pants
           </Link>
-          <Link to="/about" onClick={() => setState(!state)}>
-            About
-          </Link>
         </ul>
       </header>
+      <ul className="flex gap-3 fixed top-3 right-3 z-20 sm:hidden">
+        <li>
+          <Link
+            to="/about"
+            className="flex gap-1 items-center font-medium uppercase"
+          >
+            me
+            <Icon
+              icon="line-md:buy-me-a-coffee-filled"
+              className="h-7 w-7"
+            ></Icon>
+          </Link>
+        </li>
+        <li>
+          <Link to="/cart">
+            <Icon
+              icon="material-symbols:shopping-cart"
+              className="h-7 w-7"
+            ></Icon>
+          </Link>
+        </li>
+        <li>
+          <Icon icon="mdi:world" className="text-white h-7 w-7"></Icon>
+        </li>
+      </ul>
     </>
   )
 }

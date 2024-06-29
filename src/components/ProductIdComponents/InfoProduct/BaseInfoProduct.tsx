@@ -1,4 +1,6 @@
 import { useParams, useSearchParams } from 'react-router-dom'
+import { Icon } from '@iconify/react/dist/iconify.js'
+import { useState } from 'react'
 
 // JSONS
 import jacketsJSON from '../../../JSON/jackets.json'
@@ -12,6 +14,7 @@ export default function BaseInfoProduct() {
   const { id } = useParams()
   const [searchParams] = useSearchParams()
   const type = searchParams.get('type') as ProductType
+  const [showAlert, setShowAlert] = useState(false)
 
   const findProductByIdAndType = (
     id: string | undefined,
@@ -32,6 +35,12 @@ export default function BaseInfoProduct() {
     return <div>Product not found</div>
   }
 
+  const handleGetNowClick = () => {
+    setShowAlert(true) // Mostrar la alerta
+    setTimeout(() => {
+      setShowAlert(false) // Ocultar la alerta después de 2 segundos (ajusta el tiempo según tus necesidades)
+    }, 3000) // 2000 ms = 2 segundos
+  }
   return (
     <div className="h-fit w-full bg-none p-10 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-14">
       <img
@@ -47,10 +56,23 @@ export default function BaseInfoProduct() {
               $
             </span>
           </p>
-          <button className="bg-gray-900 text-gray-200 py-2 px-6 rounded-md font-semibold">
-            buy
+          <button
+            onClick={() => handleGetNowClick()}
+            className="bg-gray-950 hover:bg-gray-800 text-gray-200 py-2 px-6 rounded-md font-semibold flex gap-2 items-center"
+          >
+            <p>Get Now</p>
+            <Icon
+              icon="material-symbols:shopping-cart"
+              className="h-7 w-7"
+            ></Icon>
           </button>
         </div>
+      </div>
+      <div
+        className={`${showAlert ? 'fixed z-20 h-1/3 w-10/12 sm:w-8/12 flex justify-center items-center bg-gray-900 text-white text-center rounded-md shadow-2xl px-4 sm:px-16 uppercase font-medium' : 'hidden'}`}
+      >
+        “Thank you for choosing us. We hope you enjoy your product and come back
+        soon!”
       </div>
     </div>
   )

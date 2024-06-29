@@ -6,6 +6,7 @@ import SweatersView from './views/SweatersView'
 import JacketsView from './views/JacketsView'
 import PantsView from './views/PantsView'
 import ProductIdView from './views/ProductIdView'
+import CartView from './views/CartView'
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
       <Route path="/jackets" element={<JacketsView />} />
       <Route path="/pants" element={<PantsView />} />
       <Route path="/product/:id" element={<ProductIdView />} />
+      <Route path="/cart" element={<CartView />} />
     </Routes>
   )
 }

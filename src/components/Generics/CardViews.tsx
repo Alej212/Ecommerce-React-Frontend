@@ -1,7 +1,9 @@
 import { useLocation } from 'react-router-dom'
 import { Icon } from '@iconify/react/dist/iconify.js'
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
+
+// STORES
+import { useLikeStore } from '../../stores/LikeProducts'
 
 // JSON
 import jacketsJSON from '../../JSON/jackets.json'
@@ -22,20 +24,13 @@ type ProductsMap = {
   [key: string]: Product[]
 }
 
-type HiddenState = {
-  [key: string]: boolean
-}
-
 export default function CardViews() {
-  const [hidden, setHidden] = useState<HiddenState>({})
+  //eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  //@ts-ignore
+  const { liked, toggleLike } = useLikeStore()
   const location = useLocation()
   const path = location.pathname.split('/').filter(Boolean)
-  const toggleHidden = (id: string) => {
-    setHidden((prevHidden) => ({
-      ...prevHidden,
-      [id]: !prevHidden[id],
-    }))
-  }
+  console.log(liked)
   const productsMap: ProductsMap = {
     jackets: jacketsJSON,
     pants: pantsJSON,
@@ -60,18 +55,18 @@ export default function CardViews() {
               />
             </div>
             <button
-              onClick={() => toggleHidden(product.custom_id)}
+              onClick={() => toggleLike(product)}
               className="absolute top-0 right-0 py-1 px-1 text-sm font-semibold"
             >
               <Icon
                 icon={'ph:heart-fill'}
                 fontSize={'1.2rem'}
-                className={`${!hidden[product.custom_id] ? 'block' : 'hidden'} text-gray-400 transition-transform duration-500`}
+                className={`${!liked.some((likedProduct: { custom_id: string }) => likedProduct.custom_id === product.custom_id) ? 'block' : 'hidden'} text-gray-400 transition-transform duration-500`}
               ></Icon>
               <Icon
                 icon={'ph:heart-fill'}
                 fontSize={'1.2rem'}
-                className={`${hidden[product.custom_id] ? 'block' : 'hidden'} text-gray-950 transition-transform duration-500`}
+                className={`${liked.some((likedProduct: { custom_id: string }) => likedProduct.custom_id === product.custom_id) ? 'block' : 'hidden'} text-gray-950 transition-transform duration-500`}
               ></Icon>
             </button>
             <div className="h-8 overflow-x-hidden overflow-y-hidden">

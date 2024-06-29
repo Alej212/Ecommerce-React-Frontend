@@ -13,7 +13,8 @@ function SceneGLTF() {
 
   useFrame(({ clock }) => {
     if (mesh.current) {
-      mesh.current.position.y = (Math.cos(clock.getElapsedTime()) * Math.PI) / 7
+      mesh.current.rotation.z =
+        (Math.cos(clock.getElapsedTime()) * Math.PI) / 14
     }
   })
   return (

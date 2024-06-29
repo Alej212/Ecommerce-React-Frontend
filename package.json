@@ -19,7 +19,7 @@
     "swiper": "11.1.4",
     "three": "0.165.0",
     "three-stdlib": "2.30.3",
-    "zustand": "^4.5.2"
+    "zustand": "4.5.2"
   },
   "devDependencies": {
     "@iconify/react": "5.0.1",

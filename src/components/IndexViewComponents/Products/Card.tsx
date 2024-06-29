@@ -1,6 +1,6 @@
 import { Icon } from '@iconify/react'
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useLikeStore } from '../../../stores/LikeProducts'
 
 type Product = {
   custom_id: string
@@ -12,8 +12,9 @@ type Product = {
 }
 
 export default function Card({ product }: { product: Product }) {
-  const [hidden, setHidden] = useState(false)
-
+  //eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  //@ts-ignore
+  const { liked, toggleLike } = useLikeStore()
   return (
     <div className="h-full w-full py-4 px-2">
       <div className="relative flex flex-col gap-2 h-full w-full bg-gray-50 rounded-md p-2 border border-gray-950 border-opacity-10 shadow-md">
@@ -21,18 +22,18 @@ export default function Card({ product }: { product: Product }) {
           <img src={product.image} alt="" loading="lazy" className="h-full" />
         </div>
         <button
-          onClick={() => setHidden(!hidden)}
+          onClick={() => toggleLike(product)}
           className="absolute top-0 right-0 py-1 px-1 text-sm font-semibold"
         >
           <Icon
             icon={'ph:heart-fill'}
             fontSize={'1.2rem'}
-            className={`${!hidden ? 'block' : 'hidden'} transition-transform duration-500 text-gray-400`}
+            className={`${!liked.some((likedProduct: { custom_id: string }) => likedProduct.custom_id === product.custom_id) ? 'block' : 'hidden'} transition-transform duration-500 text-gray-400`}
           ></Icon>
           <Icon
             icon={'ph:heart-fill'}
             fontSize={'1.2rem'}
-            className={`${hidden ? 'block' : 'hidden'} transition-transform duration-500 text-gray-950`}
+            className={`${liked.some((likedProduct: { custom_id: string }) => likedProduct.custom_id === product.custom_id) ? 'block' : 'hidden'} transition-transform duration-500 text-gray-950`}
           ></Icon>
         </button>
         <div className="h-8 overflow-x-hidden overflow-y-hidden">
