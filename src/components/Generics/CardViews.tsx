@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom'
 import { Icon } from '@iconify/react/dist/iconify.js'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 // STORES
 import { useLikeStore } from '../../stores/LikeProducts'
@@ -28,6 +29,7 @@ export default function CardViews() {
   //eslint-disable-next-line @typescript-eslint/ban-ts-comment
   //@ts-ignore
   const { liked, toggleLike } = useLikeStore()
+  const { t } = useTranslation()
   const location = useLocation()
   const path = location.pathname.split('/').filter(Boolean)
   console.log(liked)
@@ -84,7 +86,9 @@ export default function CardViews() {
               to={`/product/${product.custom_id}?type=${product.type_product}`}
               className="bg-gray-900 rounded-sm text-white py-1 flex gap-2 justify-center items-center"
             >
-              <p className="font-semibold text-xs sm:text-sm">Get</p>
+              <p className="font-semibold text-xs sm:text-sm">
+                {t('card.buttonAdd')}
+              </p>
               <Icon
                 icon={'material-symbols:shopping-cart-rounded'}
                 fontSize={'1rem'}

@@ -1,10 +1,17 @@
 import { Icon } from '@iconify/react'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
+import HeaderMobile from './HeaderMobile'
 
 export default function Header() {
   const [state, setState] = useState(false)
-
+  const [idioms, setIdioms] = useState(false)
+  const { t, i18n } = useTranslation()
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const changeLanguage = (lng: any) => {
+    i18n.changeLanguage(lng)
+  }
   return (
     <>
       <header className="hidden bg-gray-900 h-16 w-full absolute top-0 z-20 sm:flex items-center justify-around">
@@ -14,30 +21,29 @@ export default function Header() {
               to="/about"
               className="flex gap-1 items-center font-medium uppercase"
             >
-              me
               <Icon
                 icon="line-md:buy-me-a-coffee-filled"
-                className="h-7 w-7"
+                className="h-7 w-7 bg-slate-50 rounded-full text-gray-900"
               ></Icon>
             </Link>
           </li>
         </ul>
         <ul className="flex gap-11 text-sm font-bold">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/shoes">Shoes</Link>
-          </li>
-          <li>
-            <Link to="/sweaters">Sweaters</Link>
-          </li>
-          <li>
-            <Link to="/jackets">Jackets</Link>
-          </li>
-          <li>
-            <Link to="/pants">Pants</Link>
-          </li>
+          <Link to="/" onClick={() => setState(!state)}>
+            {t('header.home')}
+          </Link>
+          <Link to="/shoes" onClick={() => setState(!state)}>
+            {t('header.shoes')}
+          </Link>
+          <Link to="/sweaters" onClick={() => setState(!state)}>
+            {t('header.sweaters')}
+          </Link>
+          <Link to="/jackets" onClick={() => setState(!state)}>
+            {t('header.jackets')}
+          </Link>
+          <Link to="/pants" onClick={() => setState(!state)}>
+            {t('header.pants')}
+          </Link>
         </ul>
         <ul className="flex gap-3">
           <li>
@@ -48,69 +54,34 @@ export default function Header() {
               ></Icon>
             </Link>
           </li>
-          <li>
-            <Icon icon="mdi:world" className="text-white h-7 w-7"></Icon>
+          <li onClick={() => setIdioms(!idioms)}>
+            <Icon
+              icon="mdi:world"
+              className={`${idioms ? 'text-emerald-400' : 'text-white'} h-7 w-7`}
+            ></Icon>
           </li>
-        </ul>
-      </header>
-      <button
-        onClick={() => setState(!state)}
-        className="sm:hidden fixed top-3 left-3 z-30 bg-none"
-      >
-        <Icon
-          icon="ep:menu"
-          fontSize="1.9rem"
-          className={`${state ? 'transform rotate-90 text-emerald-500' : 'transform rotate- text-gray-200'} transition-transform duration-500`}
-        ></Icon>
-      </button>
-      <header
-        className={`sm:hidden bg-gray-900 ${state ? 'h-full' : 'h-14'} w-full fixed top-0 z-20 flex items-center justify-center text-center text-gray-50 transition-height duration-500`}
-      >
-        <ul
-          className={`flex flex-col gap-10 text-lg ${state ? 'block' : 'hidden'} font-bold`}
-        >
-          <Link to="/" onClick={() => setState(!state)}>
-            Home
-          </Link>
-          <Link to="/shoes" onClick={() => setState(!state)}>
-            Shoes
-          </Link>
-          <Link to="/sweaters" onClick={() => setState(!state)}>
-            Sweaters
-          </Link>
-          <Link to="/jackets" onClick={() => setState(!state)}>
-            Jackets
-          </Link>
-          <Link to="/pants" onClick={() => setState(!state)}>
-            Pants
-          </Link>
-        </ul>
-      </header>
-      <ul className="flex gap-3 fixed top-3 right-3 z-20 sm:hidden">
-        <li>
-          <Link
-            to="/about"
-            className="flex gap-1 items-center font-medium uppercase"
+          <div
+            className={`${idioms ? 'right-0' : '-right-9'} hidden absolute z-20 top-20 px-2 py-4 bg-gray-950 rounded-full sm:grid grid-cols-1 gap-y-3 transition-all duration-300`}
           >
-            me
             <Icon
-              icon="line-md:buy-me-a-coffee-filled"
-              className="h-7 w-7"
+              icon="circle-flags:us"
+              className="text-white h-7 w-7"
+              onClick={() => changeLanguage('en')}
             ></Icon>
-          </Link>
-        </li>
-        <li>
-          <Link to="/cart">
             <Icon
-              icon="material-symbols:shopping-cart"
-              className="h-7 w-7"
+              icon="circle-flags:es"
+              className="text-white h-7 w-7"
+              onClick={() => changeLanguage('es')}
             ></Icon>
-          </Link>
-        </li>
-        <li>
-          <Icon icon="mdi:world" className="text-white h-7 w-7"></Icon>
-        </li>
-      </ul>
+            <Icon
+              icon="circle-flags:fr"
+              className="text-white h-7 w-7"
+              onClick={() => changeLanguage('fr')}
+            ></Icon>
+          </div>
+        </ul>
+      </header>
+      <HeaderMobile />
     </>
   )
 }

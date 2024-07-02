@@ -1,6 +1,7 @@
 import { Icon } from '@iconify/react'
 import { Link } from 'react-router-dom'
 import { useLikeStore } from '../../../stores/LikeProducts'
+import { useTranslation } from 'react-i18next'
 
 type Product = {
   custom_id: string
@@ -15,6 +16,7 @@ export default function Card({ product }: { product: Product }) {
   //eslint-disable-next-line @typescript-eslint/ban-ts-comment
   //@ts-ignore
   const { liked, toggleLike } = useLikeStore()
+  const { t } = useTranslation()
   return (
     <div className="h-full w-full py-4 px-2">
       <div className="relative flex flex-col gap-2 h-full w-full bg-gray-50 rounded-md p-2 border border-gray-950 border-opacity-10 shadow-md">
@@ -51,7 +53,9 @@ export default function Card({ product }: { product: Product }) {
           to={`/product/${product.custom_id}?type=${product.type_product}`}
           className="bg-gray-900 rounded-sm text-white py-1 flex gap-2 justify-center items-center"
         >
-          <p className="font-semibold text-xs sm:text-sm">Get</p>
+          <p className="font-semibold text-xs sm:text-sm">
+            {t('card.buttonAdd')}
+          </p>
           <Icon
             icon={'material-symbols:shopping-cart-rounded'}
             fontSize={'1rem'}
