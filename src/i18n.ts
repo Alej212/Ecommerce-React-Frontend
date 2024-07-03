@@ -26,6 +26,11 @@ i18n
           card: {
             buttonAdd: 'Get',
           },
+          productID: {
+            button: 'Get now',
+            message:
+              'Thank you for choosing us. We hope you enjoy your product and come back soon!',
+          },
         },
       },
       es: {
@@ -45,6 +50,11 @@ i18n
           card: {
             buttonAdd: 'Comprar',
           },
+          productID: {
+            button: 'Obtener ahora',
+            message:
+              'Gracias por elegirnos. ¡Esperamos que disfrute de su producto y vuelva pronto!',
+          },
         },
       },
       fr: {
@@ -63,6 +73,11 @@ i18n
           },
           card: {
             buttonAdd: 'Acheter',
+          },
+          productID: {
+            button: 'Acheter maintenant',
+            message:
+              'Merci de nous avoir choisi. Nous espérons que vous apprécierez votre produit et que vous reviendrez bientôt!',
           },
         },
       },

@@ -46,7 +46,7 @@ export default function HeaderMobile() {
         </ul>
       </header>
       <ul className="flex gap-3 fixed top-3 right-3 z-20 sm:hidden">
-        <li>
+        <li onClick={() => setState(false)}>
           <Link
             to="/about"
             className="flex gap-1 items-center font-medium uppercase"
@@ -58,7 +58,7 @@ export default function HeaderMobile() {
             ></Icon>
           </Link>
         </li>
-        <li onClick={() => setState(!state)}>
+        <li onClick={() => setState(false)}>
           <Link to="/cart">
             <Icon
               icon="material-symbols:shopping-cart"

@@ -1,5 +1,5 @@
 import Header from '../components/Generics/Header'
-import Footer from '../components/Generics/Footer'
+// import Footer from '../components/Generics/Footer'
 import App from '../App'
 
 export default function BaseLayout() {
@@ -9,7 +9,6 @@ export default function BaseLayout() {
       <main className="mt-14">
         <App />
       </main>
-      <Footer />
     </>
   )
 }
